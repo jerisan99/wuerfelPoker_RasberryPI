@@ -1,0 +1,48 @@
+C:\xampp\htdocs\IMS
+
+<?php
+	if (sizeof($_POST) >= 0){
+				
+		if(isset($_POST["msg"])){
+			$data = json_decode($_POST["msg"], true);
+			$data["id"] += 1;
+			$response = json_encode($data);
+			echo json_encode($response);
+			
+		}
+
+		if(isset($_POST["calculate"])){
+			$data = json_decode($_POST["calculate"], true);
+			switch($data["operation"]) {
+				case 'add':
+					$data["result"] = $data["zahl1"] + $data["zahl2"];
+					break;
+				case 'subtract':
+					$data["result"] = $data["zahl1"] - $data["zahl2"];
+					break;
+				case 'multiply':
+					$data["result"] = $data["zahl1"] * $data["zahl2"];
+					break;
+				case 'divide':
+					if ($data["zahl2"] != 0) {
+						$data["result"] = $data["zahl1"] / $data["zahl2"];
+					} else {
+						$data["result"] = "Division durch Null nicht möglich";
+					}
+					break;
+			}
+			$response = json_encode($data);
+			echo json_encode($response);
+		}
+	}
+
+	// Web-Test call with 
+	if (sizeof($_GET) >= 0){
+		if(isset($_GET["msg"])){
+			$data = json_decode($_GET["msg"], true);
+			$data["id"] += 1;
+			$response = json_encode($data);
+			echo json_encode($response);
+		}
+	}
+?>
