@@ -19,7 +19,7 @@ public class CalculatePost {
             String json = gson.toJson(numbers);
 
             // HTTP-Verbindung
-            URL url = new URL("http://127.0.0.1:8080/IMS/simpleSerialization.php");
+            URL url = new URL("http://10.42.0.1/gruppe4/simpleSerialization.php");
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setRequestMethod("POST");
             con.setDoOutput(true);

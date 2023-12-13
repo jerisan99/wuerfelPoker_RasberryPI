@@ -1,0 +1,19 @@
+Zweck: Der Java-Code führt HTTP-Post-Anfragen durch, um mathematische Operationen (Addition, Subtraktion, Multiplikation, Division) mit zwei Zahlen zu berechnen. Das Ergebnis wird von einem Server berechnet und zurückgesendet.
+
+Verwendung:
+
+CalculatePost-Klasse:
+
+Hauptmethode main ausführen, um den Prozess zu starten.
+Beispiel für eine Operation: Multiplikation zweier Zahlen (5.5 * 3.2).
+Verwendung von Gson zur JSON-Serialisierung und -Deserialisierung.
+HTTP-Post-Anfrage an einen bestimmten Server senden.
+Empfangene Antwort aus dem Server deserialisieren und ausgeben.
+Numbers-Klasse:
+
+Zum Speichern der zwei Zahlen und der gewählten Operation.
+Methoden zum Setzen und Abrufen von Werten (setZahl1, getZahl1, setZahl2, getZahl2, setResult, getResult).
+Wichtig:
+
+Der Server, an den die Anfrage gesendet wird, muss in der Lage sein, die Anfrage zu verarbeiten und das Ergebnis zurückzusenden.
+Der Code behandelt Netzwerk- und JSON-Verarbeitungsfehler.
